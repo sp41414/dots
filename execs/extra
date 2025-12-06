@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -S maim ripgrep 
+sudo pacman -S maim ripgrep pavucontrol git jq
 
 # some cloudflare warp stuff
 yay -S cloudflare-warp-bin --noconfirm

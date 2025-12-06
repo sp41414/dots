@@ -1,3 +1,8 @@
 #!/bin/bash
 
 sudo pacman -S flameshot
+
+# some cloudflare warp stuff
+yay -S cloudflare-warp-bin --noconfirm
+sudo systemctl enable warp-svc --now
+warp-cli registration new && warp-cli connect

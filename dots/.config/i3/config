@@ -12,6 +12,10 @@ exec_always --no-startup-id xrandr --output DP-0 --mode 3440x1440 --rate 144.00
 
 exec --no-startup-id xset r rate 200 35
 
+# clipboard
+exec --no-startup-id greenclip daemon
+bindsym $mod+v exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}'
+
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+ && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%- && $refresh_i3status
@@ -26,11 +30,11 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec i3-sensible-terminal
 
 # screenshot
-bindsym $mod+ctrl+shift+s --release exec --no-startup-id flameshot screen
-# different bindings same thing
-bindsym $mod+shift+s exec --no-startup-id flameshot gui
-bindsym Print exec --no-startup-id flameshot gui
-bindsym $mod+F4 exec --no-startup-id flameshot gui
+bindsym $mod+shift+s exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
+bindsym Print exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
+bindsym $mod+F4 exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
+bindsym $mod+ctrl+shift+s exec --no-startup-id maim | xclip -selection clipboard -t image/png
+
 
 # kill focused window
 bindsym $mod+q kill

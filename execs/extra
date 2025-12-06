@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -S flameshot
+sudo pacman -S maim ripgrep 
 
 # some cloudflare warp stuff
 yay -S cloudflare-warp-bin --noconfirm

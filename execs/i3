@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sudo pacman -S i3 xorg-xrandr
+echo "exec i3" > ~/.xinitrc
+# Start i3 on login
+echo "startx" >> ~/.bashrc

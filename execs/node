@@ -1,0 +1,14 @@
+#!/usr/bin/fish
+
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+fisher install jorgebucaran/nvm.fish
+
+nvm install lts
+# just in case (fish and bash)
+sudo pacman -S npm nodejs
+npm install -g corepack
+
+sudo pacman -S unzip
+
+curl -fsSL https://deno.land/install.sh | sh
+curl -fsSL https://bun.sh/install | bash

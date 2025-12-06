@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo pacman -S fish kitty starship eza
+hash -r
+sudo chsh -s $(which fish)

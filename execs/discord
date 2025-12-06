@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo pacman -S discord
+yay -S equicord-installer-bin --noconfirm
+sudo Equilotl

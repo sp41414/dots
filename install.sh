@@ -36,5 +36,21 @@ case "${ans:-y}" in
 esac
 
 mkdir -p ~/.config
-cp -r ./dots/config/* ~/.config/
+cp -r ./dots/.config/* ~/.config/
+
+install "tmux" tmux
+
+echo "=> scripts"
+read -rp "backup ~/.local/scripts? [Y/n] " ans
+case "${ans:-y}" in
+    [Yy]*|"") 
+        [[ -d ~/.local/scripts ]] && mv ~/.local/scripts ~/.local/scripts.bak.$(date +%s)
+        ;;
+    [Nn]*) 
+        rm -rf ~/.local/scripts
+        ;;
+esac
+mkdir -p ~/.local/scripts
+cp -r ./dots/.local/scripts/* ~/.local/scripts/
+
 echo "done"

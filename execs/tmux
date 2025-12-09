@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sudo pacman -S tmux fzf
+source-file ~/.tmux.conf
+
+mkdir ~/projects && mkdir ~/tests
